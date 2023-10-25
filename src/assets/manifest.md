@@ -8,7 +8,7 @@ image:
   href: /logo.png
   alt: GraphQL
 description: |
-  Run a GraphQL Helix server at the edge with Fastly Compute@Edge to scale to huge amounts of queries
+  Run a GraphQL Helix server at the edge with Fastly Compute to scale to huge amounts of queries
 views:
   endUser:
     mode: frame
@@ -38,9 +38,9 @@ This is useful as one GraphQL service can pull data from many different APIs.
 
 #### Caching
 
-Normally it is very difficult to achieve good caching when using GraphQL because all requests are POST requests, and if the edge server passes the query directly to a GraphQL API upstream, the response is hard to cache (there are workarounds, see [this example](https://developer.fastly.com/solutions/examples/cache-graphql-query-response/) for a simplistic solution if you are using VCL and unable to migrate to Compute@Edge).
+Normally it is very difficult to achieve good caching when using GraphQL because all requests are POST requests, and if the edge server passes the query directly to a GraphQL API upstream, the response is hard to cache (there are workarounds, see [this example](https://developer.fastly.com/solutions/examples/cache-graphql-query-response/) for a simplistic solution if you are using VCL and unable to migrate to Compute).
 
-However, by using Compute@Edge, we can process GraphQL requests at the edge with full knowledge and understanding of the GraphQL semantics, and make use of Fastly's caching mechanisms in the most appropriate way. This drastically lowers the load on APIs, because when queries are processed, they can be resolved with cached data.  An example of caching responses from origin can be found in the demo code [here](https://github.com/fastly/graphql-compute-example/blob/main/src/schema.js#L75), but would benefit from being more sophisticated for a production deployment.
+However, by using Compute, we can process GraphQL requests at the edge with full knowledge and understanding of the GraphQL semantics, and make use of Fastly's caching mechanisms in the most appropriate way. This drastically lowers the load on APIs, because when queries are processed, they can be resolved with cached data.  An example of caching responses from origin can be found in the demo code [here](https://github.com/fastly/graphql-compute-example/blob/main/src/schema.js#L75), but would benefit from being more sophisticated for a production deployment.
 
 ### Trying it out
 
