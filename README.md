@@ -1,4 +1,4 @@
-# Example of using GraphQL in Fastly Compute@Edge
+# Example of using GraphQL in Fastly Compute
 
 ## What is GraphQL?
 
